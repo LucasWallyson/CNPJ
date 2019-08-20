@@ -1,9 +1,25 @@
+var listelement = document.getElementById('list');
+
+var CNPJlist = JSON.parse(localStorage.getItem('CNPJlist')) || [];
+
+function verlista(){
+    listelement.innerHTML = '';
+    for (list of CNPJlist){
+        var Celement = document.createElement('li');
+        var textelement = document.createTextNode(list);
+
+        Celement.appendChild(textelement);
+        listelement.appendChild(Celement);
+    }
+}
 var Geradordecnpj = function() {
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
-      }
+   
+    }
+
 
     var n1 = getRandomInt(0, 9);
     var n2 = getRandomInt(0, 9);
@@ -34,5 +50,13 @@ var Geradordecnpj = function() {
 
     var mascara =''+n1+n2+'.'+n3+n4+n5+'.'+n6+n7+n8+'/'+n9+n10+n11+n12+'-'+d1+d2+'';
     document.getElementById('demo1').value= mascara;
-    
+    var mac = mascara;
+    CNPJlist.push(mac);
+    salvarstorage();
 };
+
+
+function salvarstorage(){
+    localStorage.setItem('CNPJlist', JSON.stringify(CNPJlist));
+}
+
