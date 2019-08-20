@@ -83,19 +83,6 @@ var validarCNPJ =  function() {
         d2= (11-d2);
     }    
     if(parseInt(resultadoVerdadeiro[0]) == d1 && resultadoVerdadeiro[1] == d2) { 
-        //  var B = function Criarlist(){
-        //     for (add of ListaCNPJ){
-        //     var itemlist = document.createElement('li');
-        //     var textlist = document.createTextNode(add);
-        
-        //     itemlist.appendChild(textlist);
-        //     listelement.appendChild(itemlist);
-        //     }
-        // }
-        //  var Aitem = resultadoVerdadeiro.value;
-        //  console.log(Aitem);
-        //  ListaCNPJ.push(Aitem);
-        //  B();
          alert('CNPJ Valido');
         
     }   
