@@ -8,7 +8,20 @@ function verlista(){
         var Celement = document.createElement('li');
         var textelement = document.createTextNode(list);
 
+        var linkelement = document.createElement('a');
+
+        linkelement.setAttribute('href', '#');
+
+        var pos = CNPJlist.indexOf(list);
+        linkelement.setAttribute('onclick', 'Delet('+ pos +')');
+
+        var linktext = document.createTextNode('excluir');
+
+        linkelement.appendChild(linktext);
+       
         Celement.appendChild(textelement);
+        Celement.appendChild(linkelement);
+        
         listelement.appendChild(Celement);
     }
 }
@@ -86,10 +99,10 @@ var Geradordecnpj = function() {
         d2=11-d2;
     } 
     gerar.push(d2);
-    console.log(gerar)
+   
     var mascara = [''+gerar[0]+gerar[1]+'.'+gerar[2]+gerar[3]+gerar[4]+'.'+gerar[5]+gerar[6]+gerar[7]+'/'+gerar[8]+gerar[9]+gerar[10]+gerar[11]+'-'+gerar[12]+gerar[13]+''] ;
     document.getElementById('demo1').value= mascara;
-    console.log(mascara)
+    
     
     // var n1 = getRandomInt(0, 9);
     // var n2 = getRandomInt(0, 9);
@@ -126,7 +139,11 @@ var Geradordecnpj = function() {
     CNPJlist.push(mac);
     salvarstorage();
 };
-
+function Delet(pos){
+    CNPJlist.splice(pos, 1);
+    verlista();
+    salvarstorage();
+}
 
 function salvarstorage(){
     localStorage.setItem('CNPJlist', JSON.stringify(CNPJlist));
