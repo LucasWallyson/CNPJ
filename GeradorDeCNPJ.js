@@ -41,10 +41,12 @@ var Geradordecnpj = function() {
     }
     var Arraynovo = [0,0,0,1];
 
-    for (var i = 0; i < Arraynovo.length; i++){
-        gerar.push(Arraynovo[i]);
+    Arraynovo.forEach(function(element) {    
+        gerar.push(element);
+    });
+    // for (var i = 0; i < Arraynovo.length; i++){
         
-    }
+    // }
    
     var gerarD1 = gerar.concat([]);
         
@@ -57,14 +59,17 @@ var Geradordecnpj = function() {
         primeiroDecremento--;
     }
       
-     for(var i = 4; i < 12; i++){
+    for(var i = 4; i < 12; i++){
         gerarD1[i] = gerarD1[i] * SegundoDecremento;
         SegundoDecremento--;    
      } 
      var d1 = 0;
-     for(var i = 0; i < gerarD1.length; i++){
-         d1 += gerarD1[i];
-     }
+     gerarD1.forEach(function(element){
+        d1 += element;
+     });
+    // for(var i = 0; i < gerarD1.length; i++){
+    //      d1 += gerarD1[i];
+    //  }
         d1 = (d1%11);
     if(d1<2){
         d1=0;
@@ -89,9 +94,12 @@ var Geradordecnpj = function() {
         SegundoDecremento--;    
      } 
      var d2 = 0;
-     for(var i = 0; i < gerarD2.length; i++){
-         d2 += gerarD2[i];
-     }
+     gerarD2.forEach(function(element){
+        d2 += element;
+     });
+    //  for(var i = 0; i < gerarD2.length; i++){
+    //      d2 += gerarD2[i];
+    //  }
         d2 = (d2%11);
     if(d2<2){
         d2=0;
@@ -99,9 +107,14 @@ var Geradordecnpj = function() {
         d2=11-d2;
     } 
     gerar.push(d2);
-   
-    var mascara = [''+gerar[0]+gerar[1]+'.'+gerar[2]+gerar[3]+gerar[4]+'.'+gerar[5]+gerar[6]+gerar[7]+'/'+gerar[8]+gerar[9]+gerar[10]+gerar[11]+'-'+gerar[12]+gerar[13]+''] ;
-    document.getElementById('demo1').value= mascara;
+   var string = gerar.join("");
+
+    var mascara = function(valor) {
+        return string.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
+    }
+
+    var mascaraTerminada = mascara(gerar);
+    document.getElementById('demo1').value= mascaraTerminada;
     
     
     // var n1 = getRandomInt(0, 9);
@@ -135,7 +148,7 @@ var Geradordecnpj = function() {
 
     // var mascara = [''+gerar+'/'+geraN+'-'+d1+d2+''] ;
     // document.getElementById('demo1').value= mascara;
-    var mac = mascara;
+    var mac = mascaraTerminada;
     CNPJlist.push(mac);
     salvarstorage();
 };
