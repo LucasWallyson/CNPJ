@@ -30,9 +30,7 @@ var validarCNPJ =  function() {
     cnpjPreTratado.forEach(function (element){
         element = parseInt(element);
     });
-    // for(var i = 0; i < cnpjPreTratado.length; i++){
-    //     cnpjPreTratado[i] = parseInt(cnpjPreTratado[i]);   
-    // }
+
     for(var i = 0; i < 4; i++){
         cnpjPreTratado[i] = cnpjPreTratado[i] * primeiroDecremento;
         primeiroDecremento--;
@@ -47,9 +45,7 @@ var validarCNPJ =  function() {
      cnpjPreTratado.forEach(function(element){
         d1 += element;
      });
-    //  for(var i = 0; i < cnpjPreTratado.length; i++){
-    //      d1 += cnpjPreTratado[i];
-    // }
+   
     d1 = (d1%11);
     if(d1<2) {
         d1=0;
@@ -66,10 +62,7 @@ var validarCNPJ =  function() {
     cnpjPreTratado2.forEach(function(element){
         element = parseInt(element);
     });
-    // for(var i = 0; i < cnpjPreTratado2.length; i++){
-    //     cnpjPreTratado2[i] = parseInt(cnpjPreTratado2[i]);   
-    // }
-
+   
     for(var i = 0; i < 5; i++){
         cnpjPreTratado2[i] = cnpjPreTratado2[i] * primeiroDecremento1;
         primeiroDecremento1--;
@@ -84,9 +77,7 @@ var validarCNPJ =  function() {
      cnpjPreTratado2.forEach(function(element){
         d2 += element;
      });
-    //  for(var i = 0; i < cnpjPreTratado2.length; i++){
-    //      d2 += cnpjPreTratado2[i];
-    // }
+
     d2 = (d2%11);
     if(d2<2) {
         d2=0;
