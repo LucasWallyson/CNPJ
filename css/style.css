@@ -1,0 +1,63 @@
+body{
+    background: black;
+}
+
+#caixa {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    background: gray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px; 
+}
+#elements{
+   /* background: white; */
+   top: 50%;
+   left: 50%;
+   transform: translate(10%, 10%);
+   padding-left: 25%;
+}   
+#Generator{
+    text-align: center;
+    width: 170px;
+    height: 25px;
+    border-radius: 10px;
+}
+#Valid{
+    text-align: center;
+    width: 170px;
+    height: 25px;
+    border-radius: 10px;
+}
+#Bvalid{
+    position: absolute;
+    cursor: pointer;
+    top: 85%;
+   left: 35%;
+   /* transform: translate(-160%, 180%); */
+   border-radius: 8px;
+}
+#Blist{
+    position: absolute;
+    cursor: pointer;
+    top: 130%;
+    left: 32%;
+    /* transform: translate(-115%, 400%); */
+    border-radius: 8px;
+    
+}
+#Bgenerator{
+    position: absolute;
+    cursor: pointer;
+    top: 30%;
+   left: 35%;
+   /* transform: translate(-160%, -%); */
+   border-radius: 8px;
+}
+#titulo{
+    top: 50%;
+    left: 50%;
+    transform: translate(15%, 10%);
+}

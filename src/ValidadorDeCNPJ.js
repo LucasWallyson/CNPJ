@@ -1,7 +1,7 @@
 var validarCNPJ =  function() {
     var listelement = document.getElementById('list');
     var ListaCNPJ = [];
-    var cnpj = document.getElementById('demo2').value;
+    var cnpj = document.getElementById('Valid').value;
     cnpj = cnpj.replace(/[^\d]+/g,'');
 
     // Elimina CNPJs invalidos conhecidos 

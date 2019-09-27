@@ -110,7 +110,7 @@ var Geradordecnpj = function() {
     }
 
     var mascaraTerminada = mascara(gerar);
-    document.getElementById('demo1').value= mascaraTerminada;
+    document.getElementById('Generator').value= mascaraTerminada;
     
     var mac = mascaraTerminada;
     CNPJlist.push(mac);
